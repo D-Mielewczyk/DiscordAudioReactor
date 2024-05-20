@@ -14,7 +14,8 @@
 1. Create a new application and bot on the [Discord Developer Portal](https://discord.com/developers/applications).
 2. Copy your bot token.
 3. Create a `.env` file in the root directory of your project and add your bot token:
-    ```
+
+    ```env
     DISCORD_BOT_TOKEN=your_bot_token_here
     ```
 
@@ -23,6 +24,7 @@
 ## Usage
 
 1. Run the bot:
+
     ```bash
     python bot.py
     ```
@@ -55,7 +57,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [discord.py](https://github.com/Rapptz/discord.py)
 - [PyNaCl](https://github.com/pyca/pynacl)
 - [FFmpeg](https://ffmpeg.org/)
-
-```
-
-This `README.md` provides a clear and concise overview of the project, including setup, usage, and contribution guidelines. You can adjust any specific details as needed for your project.
