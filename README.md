@@ -8,27 +8,6 @@
 - **Audio Playback**: Plays corresponding audio files in a voice channel when keywords are detected.
 - **Voice Channel Commands**: Commands to make the bot join or leave voice channels.
 
-## Requirements
-
-- Python 3.7+
-- `discord.py` library
-- `PyNaCl` library
-- FFmpeg (for audio playback)
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/DiscordAudioReactor.git
-    cd DiscordAudioReactor
-    ```
-
-2. Install the required libraries:
-    ```bash
-    pip install discord.py pynacl
-    ```
-
-3. Ensure FFmpeg is installed and accessible in your system's PATH. You can download FFmpeg from [here](https://ffmpeg.org/download.html).
 
 ## Setup
 
@@ -61,3 +40,22 @@ keywords = {
     "hello": "path/to/hello.mp3",
     "bye": "path/to/bye.mp3"
 }
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [discord.py](https://github.com/Rapptz/discord.py)
+- [PyNaCl](https://github.com/pyca/pynacl)
+- [FFmpeg](https://ffmpeg.org/)
+
+```
+
+This `README.md` provides a clear and concise overview of the project, including setup, usage, and contribution guidelines. You can adjust any specific details as needed for your project.
