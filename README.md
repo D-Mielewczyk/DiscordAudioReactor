@@ -8,7 +8,6 @@
 - **Audio Playback**: Plays corresponding audio files in a voice channel when keywords are detected.
 - **Voice Channel Commands**: Commands to make the bot join or leave voice channels.
 
-
 ## Setup
 
 1. Create a new application and bot on the [Discord Developer Portal](https://discord.com/developers/applications).
