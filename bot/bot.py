@@ -52,10 +52,12 @@ async def join(interaction: discord.Interaction):
 
 @bot.tree.command(name="leave", description="Make the bot leave the voice channel")
 async def leave(interaction: discord.Interaction):
-    if interaction.guild.voice_client:
-        await interaction.guild.voice_client.disconnect()
+    voice_client = interaction.guild.voice_client
+    if voice_client:
+        channel_name = voice_client.channel.name
+        await voice_client.disconnect()
         await interaction.response.send_message("Left the voice channel")
-        logger.info('Left voice channel: %s', interaction.guild.voice_client.channel.name)
+        logger.info('Left voice channel: %s', channel_name)
     else:
         await interaction.response.send_message("Bot is not connected to a voice channel")
         logger.warning('Attempted to leave voice channel but bot is not connected')
