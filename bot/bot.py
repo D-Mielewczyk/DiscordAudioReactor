@@ -36,21 +36,26 @@ async def on_ready():
 
 
 @bot.command()
-async def join(ctx):
-    if ctx.author.voice:
-        channel = ctx.author.voice.channel
+@bot.tree.command(name="join", description="Make the bot join your current voice channel")
+async def join(ctx: discord.Interaction):
+    if ctx.user.voice:
+        channel = ctx.user.voice.channel
         await channel.connect()
-        logger.info("Joined voice channel: %s", channel.name)
+        await ctx.response.send_message(f"Joined voice channel: {channel.name}")
+        logger.info('Joined voice channel: %s', channel.name)
     else:
-        await ctx.send("You are not connected to a voice channel")
-        logger.info("User %s is not connected to a voice channel", ctx.author)
+        await ctx.response.send_message("You are not connected to a voice channel")
+        logger.info('User %s is not connected to a voice channel', ctx.user)
 
-
-@bot.command()
-async def leave(ctx):
-    if ctx.voice_client:
+@bot.tree.command(name="leave", description="Make the bot leave the voice channel")
+async def leave(ctx: discord.Interaction):
+    if ctx.guild.voice_client:
         await ctx.guild.voice_client.disconnect()
-        logger.info("Left voice channel: %s", ctx.guild.voice_client.channel.name)
+        await ctx.response.send_message("Left the voice channel")
+        logger.info('Left voice channel: %s', ctx.guild.voice_client.channel.name)
+    else:
+        await ctx.response.send_message("Bot is not connected to a voice channel")
+        logger.warning('Attempted to leave voice channel but bot is not connected')
 
 
 @bot.event
