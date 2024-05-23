@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
+PERMISSIONS_INTEGER = 630019156082624
+
 # Configure logging
 logging.basicConfig(
     filename="bot.log",
@@ -27,7 +29,10 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    logger.info("Logged in as %s", bot.user)
+    logger.info('Logged in as %s', bot.user)
+    print(f'Invite your bot using the following URL: '
+          f'https://discord.com/oauth2/authorize?client_id={bot.user.id}&permissions={PERMISSIONS_INTEGER}&scope=bot')
+
 
 
 @bot.command()
